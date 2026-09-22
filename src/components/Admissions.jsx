@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, CheckCircle, Send, Award, Download, Printer, User, Phone, Mail, Calendar, Baby, Heart } from 'lucide-react';
+import { Sparkles, CheckCircle, Send, Award, Download, User, Phone, Mail, Calendar, Baby, Heart } from 'lucide-react';
 import { playBoingSound, playFanfareSound, playPopSound } from '../utils/audio';
 import { triggerGrandCelebration } from '../utils/confetti';
 import { schoolData } from '../data/schoolData';
@@ -33,10 +33,6 @@ export const Admissions = ({ initialProgram = null, onClose = null }) => {
     setSubmitted(true);
     playFanfareSound();
     triggerGrandCelebration();
-  };
-
-  const handlePrint = () => {
-    window.print();
   };
 
   return (
@@ -306,14 +302,6 @@ export const Admissions = ({ initialProgram = null, onClose = null }) => {
                 >
                   <span>💬 Send VIP Pass to School WhatsApp</span>
                 </a>
-
-                <button
-                  onClick={handlePrint}
-                  className="px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-300 flex items-center gap-2 transition-colors"
-                >
-                  <Printer className="w-4 h-4" />
-                  <span>Print Pass</span>
-                </button>
 
                 <button
                   onClick={() => {
