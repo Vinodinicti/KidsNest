@@ -28,59 +28,59 @@ export const AgeCalculator = ({ onOpenAdmissions }) => {
     setAgeDetails({ years, months });
 
     let match = null;
-    if (ageInDecimal < 1.5) {
+    if (ageInDecimal < 1.8) {
       match = {
-        name: "Toddler Nest (Early Registration)",
-        status: "Eligible Soon (Starts at 18 months)",
-        badge: "Infant & Toddler Track",
+        name: "After-School & Toddler Care",
+        status: "Eligible Soon (Starts at 1.8 Years)",
+        badge: "Below 1.8 Years",
         color: "bg-amber-500",
-        message: "Your little one will soon be ready for Toddler Nest! Pre-register now to reserve an early sensory bay.",
+        message: "Your child is under 1.8 years. Early registration for Toddler Care and After-School activities is available!",
         focus: ["Sensory stimulation", "Gentle socialization", "Rhythm & Music"],
       };
-    } else if (ageInDecimal >= 1.5 && ageInDecimal < 2.5) {
+    } else if (ageInDecimal >= 1.8 && ageInDecimal < 2.5) {
       match = {
-        name: "Toddler Nest",
+        name: "Play Group",
         status: "Perfect Match! 🧸",
-        badge: "1.5 – 2.5 Years",
+        badge: "1.8 – 2.5 Years",
         color: "bg-amber-500",
-        message: "Ideal for gentle transition into social interaction, sensory discovery bins, and motor coordination.",
-        focus: ["Sensory exploration", "Speech development", "Potty training & motor play"],
+        message: "Gentle introduction to social learning with sensory exploration, nursery rhyme circles, rhythm games, and mother-like attention.",
+        focus: ["Sensory water & sand bins", "Language rhymes & puppet play", "Gross & fine motor skills"],
       };
     } else if (ageInDecimal >= 2.5 && ageInDecimal < 3.5) {
       match = {
-        name: "Playgroup / Pre-Nursery",
+        name: "Pre KG",
         status: "Perfect Match! 🎨",
         badge: "2.5 – 3.5 Years",
         color: "bg-sky-500",
-        message: "Ideal for messy art, phonics rhymes, peer sharing, and gross motor outdoor activities.",
-        focus: ["Jolly Phonics foundation", "Messy play & finger art", "Social empathy"],
+        message: "Interactive thematic learning through finger painting, messy art, color and shape identification, and Jolly Phonics immersion.",
+        focus: ["Jolly Phonics & vocabulary", "Color mixing & shape recognition", "Pre-writing finger grip"],
       };
     } else if (ageInDecimal >= 3.5 && ageInDecimal < 4.5) {
       match = {
-        name: "Nursery Junior",
+        name: "LKG (Lower Kindergarten)",
         status: "Perfect Match! 🚀",
         badge: "3.5 – 4.5 Years",
         color: "bg-pink-500",
-        message: "Ideal for foundational reading, arithmetic games, little STEAM experiments, and stage confidence.",
-        focus: ["Reading readiness", "Number puzzles", "Little STEM lab"],
+        message: "Foundational reading and arithmetic readiness where letters turn into words, numbers become fun puzzles, and little scientists explore nature.",
+        focus: ["Letter sound blending & sight words", "Number counting & logic", "Little STEAM experiments"],
       };
-    } else if (ageInDecimal >= 4.5 && ageInDecimal <= 6.5) {
+    } else if (ageInDecimal >= 4.5 && ageInDecimal <= 5.5) {
       match = {
-        name: "Kindergarten (KG / UKG)",
+        name: "UKG (Upper Kindergarten)",
         status: "Perfect Match! 🎓",
-        badge: "4.5 – 6.0 Years",
+        badge: "4.5 – 5.5 Years",
         color: "bg-purple-500",
-        message: "Ideal for primary school readiness, creative writing, logical reasoning, and world curiosity.",
-        focus: ["Sentence reading & writing", "Mental math", "Non-screen coding board games"],
+        message: "Comprehensive kindergarten curriculum preparing students for primary school with fluent sentence reading, addition, subtraction, and independent reasoning.",
+        focus: ["Sentence reading & writing", "Mental math & shapes", "Primary school readiness"],
       };
     } else {
       match = {
-        name: "After-School & Activity Nest",
-        status: "Specialty Club Match! 🌟",
-        badge: "6.0+ Years",
+        name: "After-School Skill Academies",
+        status: "After Hour Activity Match! ⭐",
+        badge: "5.5+ Years (After Hour Activity)",
         color: "bg-emerald-500",
-        message: "Your child is ready for our exciting evening hobby clubs (Taekwondo, Chess, Robotics & Theater).",
-        focus: ["Hobby mastery", "Homework mentorship", "Sports & Arts"],
+        message: "Your child is ready for our certified After-School Skill Academies including Silambam, Karate, Pencil Sketching, India Book of Records, and Dance!",
+        focus: ["Silambam & Karate Martial Arts", "Pencil Sketching Fine Arts", "India Book of Records Coaching", "Dance Academy"],
       };
     }
 
