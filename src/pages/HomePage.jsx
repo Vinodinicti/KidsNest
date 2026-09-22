@@ -517,7 +517,7 @@ export const HomePage = ({ onOpenTour }) => {
               return (
                 <div
                   key={`${t.id}-${idx}`}
-                  className={`w-[290px] sm:w-[330px] flex-shrink-0 bg-gradient-to-br ${theme.gradient} rounded-2xl p-4 border-2 ${theme.border} shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between space-y-2.5 relative cursor-pointer`}
+                  className={`w-[260px] sm:w-[330px] flex-shrink-0 bg-gradient-to-br ${theme.gradient} rounded-2xl p-3.5 sm:p-4 border-2 ${theme.border} shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between space-y-2.5 relative cursor-pointer`}
                 >
                   <div className="space-y-1.5">
                     
@@ -543,35 +543,35 @@ export const HomePage = ({ onOpenTour }) => {
                   </div>
 
                   {/* Author Info (NO PHOTO - Clean Gradient Initial Badge) + Like Button */}
-                  <div className="pt-2 border-t border-slate-200/80 flex items-center justify-between">
+                  <div className="pt-2 border-t border-slate-200/80 flex items-center justify-between gap-1.5 sm:gap-2">
                     
                     {/* Parent Details with Initial Avatar */}
-                    <div className="flex items-center gap-2">
-                      <div className={`w-8 h-8 rounded-xl bg-gradient-to-tr ${theme.avatarBg} text-white font-comic font-bold text-xs flex items-center justify-center shadow-xs flex-shrink-0`}>
+                    <div className="flex items-center gap-1.5 sm:gap-2 min-w-0 flex-1">
+                      <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-gradient-to-tr ${theme.avatarBg} text-white font-comic font-bold text-[10px] sm:text-xs flex items-center justify-center shadow-xs flex-shrink-0`}>
                         {initials}
                       </div>
-                      <div className="min-w-0">
-                        <div className="font-comic font-bold text-xs text-slate-900 truncate">
+                      <div className="min-w-0 flex-1">
+                        <div className="font-comic font-bold text-[11px] sm:text-xs text-slate-900 truncate">
                           {t.name}
                         </div>
-                        <div className="text-[10px] font-semibold text-amber-700 truncate">
+                        <div className="text-[9px] sm:text-[10px] font-semibold text-amber-700 truncate">
                           {t.child}
                         </div>
                       </div>
                     </div>
 
-                    {/* Interactive Like Reaction */}
+                    {/* Interactive Like Reaction - Compact Sizing for Mobile */}
                     <button
                       onClick={(e) => handleLikeReview(t.id, e)}
-                      className={`flex items-center gap-1 px-2.5 py-1 rounded-full border text-[11px] font-bold transition-all cursor-pointer ${
+                      className={`flex-shrink-0 flex items-center gap-1 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full border text-[10px] sm:text-[11px] font-bold transition-all cursor-pointer ${
                         isLiked
-                          ? 'bg-rose-500 text-white border-rose-500 shadow-xs'
+                          ? 'bg-rose-500 text-white border-rose-500 shadow-xs scale-105'
                           : 'bg-white text-rose-600 border-rose-200 hover:bg-rose-50'
                       }`}
                       title="Like review"
                     >
-                      <Heart className={`w-3 h-3 ${isLiked ? 'fill-white text-white' : 'fill-rose-500 text-rose-500'}`} />
-                      <span>{count}</span>
+                      <Heart className={`w-2.5 h-2.5 sm:w-3 sm:h-3 ${isLiked ? 'fill-white text-white' : 'fill-rose-500 text-rose-500'}`} />
+                      <span className="leading-none">{count}</span>
                     </button>
 
                   </div>
