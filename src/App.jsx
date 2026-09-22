@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation, Link } from 'react
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { TourModal } from './components/TourModal';
+import { SplashScreen } from './components/SplashScreen';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { CoursesPage } from './pages/CoursesPage';
@@ -24,10 +25,13 @@ function ScrollToTop() {
 }
 
 export function App() {
+  const [showSplash, setShowSplash] = useState(true);
   const [tourModalOpen, setTourModalOpen] = useState(false);
 
   return (
-    <Router>
+    <>
+      {showSplash && <SplashScreen onFinish={() => setShowSplash(false)} />}
+      <Router>
       <ScrollToTop />
       <div className="min-h-screen relative font-sans text-slate-950 bg-[#FFFDF7] flex flex-col justify-between">
         
@@ -84,6 +88,7 @@ export function App() {
 
       </div>
     </Router>
+    </>
   );
 }
 
