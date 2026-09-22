@@ -118,21 +118,33 @@ export const AdmissionPage = () => {
             </div>
           </div>
 
-          {/* Official Helplines */}
-          <div className="bg-white py-2.5 px-4 sm:px-5 rounded-xl border-2 border-amber-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-2.5">
-            <div className="text-center sm:text-left">
-              <div className="text-[11px] font-bold text-slate-950 uppercase tracking-wider flex items-center justify-center sm:justify-start gap-1.5">
+          {/* Official Helplines - 2 Numbers in 2 Columns */}
+          <div className="bg-white py-3 px-4 sm:px-5 rounded-xl border-2 border-amber-200 shadow-sm flex flex-col items-center justify-center space-y-2.5">
+            <div className="text-center">
+              <div className="text-[11px] sm:text-xs font-bold text-slate-950 uppercase tracking-wider flex items-center justify-center gap-1.5">
                 <Phone className="w-3.5 h-3.5 text-red-600" />
                 <span>Call For Admission Query:</span>
               </div>
-              <p className="text-[11px] text-slate-900 font-semibold">Available Monday – Saturday (8:30 AM – 6:30 PM)</p>
+              <p className="text-[10px] sm:text-[11px] text-slate-800 font-semibold mt-0.5">
+                Available Monday – Saturday (8:30 AM – 6:30 PM)
+              </p>
             </div>
-            <div className="flex flex-wrap items-center justify-center gap-3 text-sm sm:text-base font-comic font-bold text-slate-950">
-              <a href={`tel:${schoolData.phone}`} className="text-red-600 hover:text-red-700 hover:underline flex items-center gap-1 bg-red-50 px-3 py-1.5 rounded-lg border border-red-200">
-                <span>📞 {schoolData.phone}</span>
+            
+            {/* 2 Columns Phone Number Grid */}
+            <div className="grid grid-cols-2 gap-2 sm:gap-3 w-full max-w-lg mx-auto font-comic font-bold text-xs sm:text-sm">
+              <a 
+                href={`tel:${schoolData.phone}`} 
+                className="text-red-600 hover:text-red-700 hover:bg-red-100 flex items-center justify-center gap-1.5 bg-red-50/90 px-2.5 py-2 sm:px-4 sm:py-2.5 rounded-xl border border-red-200/80 shadow-xs transition-all text-center"
+              >
+                <span>📞</span>
+                <span className="truncate">{schoolData.phone}</span>
               </a>
-              <a href={`tel:${schoolData.altPhone}`} className="text-red-600 hover:text-red-700 hover:underline flex items-center gap-1 bg-red-50 px-3 py-1.5 rounded-lg border border-red-200">
-                <span>📞 {schoolData.altPhone}</span>
+              <a 
+                href={`tel:${schoolData.altPhone}`} 
+                className="text-red-600 hover:text-red-700 hover:bg-red-100 flex items-center justify-center gap-1.5 bg-red-50/90 px-2.5 py-2 sm:px-4 sm:py-2.5 rounded-xl border border-red-200/80 shadow-xs transition-all text-center"
+              >
+                <span>📞</span>
+                <span className="truncate">{schoolData.altPhone}</span>
               </a>
             </div>
           </div>
